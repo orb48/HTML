@@ -1,0 +1,293 @@
+﻿body {
+	font-family: sans-serif;
+	
+	background: #F9F9F9;
+}
+
+/*Page header*/
+
+* {
+	box-sizing: border-box;
+}
+
+.page-header ul {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #FED411;
+	font-size: 19px;
+}
+
+.page-header li {
+margin: 23px 0 0 0;
+	display: table-cell;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.page-header sub {
+	bottom: 0;
+}
+
+.page-header li > div {
+	border-right: 1px solid #D1B11E;
+}
+
+.page-header a {
+	text-decoration: none;
+	color: #9A810E;
+}
+
+.page-header a:hover {
+	text-decoration: underline;
+}
+
+.page-header .disable a {
+	text-decoration: none;
+	cursor: default;
+	opacity: 0.3; 
+}
+
+.page-header .active a {
+	text-decoration: underline;
+	color: #DD2F0C;
+}
+
+/*Validators table*/
+
+.validators-table-wrapper {
+	overflow: auto;
+	max-height: 260px;
+	padding: 0 18px;
+}
+
+.validators-table {
+	width: 100%;
+	border-spacing: 0;
+	color: #6C6C6C;
+}
+
+.validators-table > thead > tr {
+	font-size: 13px;
+	color: #737373;
+}
+
+.validators-table > thead th {
+	border-bottom: 1px solid #D9DADA;
+}
+
+.validators-table th,
+.validators-table td {
+	padding: 10px 5px;
+}
+
+.validators-table .validator-col {
+	width: 100px;
+	text-align: left;
+}
+
+.validators-table .letter-col {
+	width: 70px;
+	text-align: center;
+}
+
+.validators-table .address-col {
+	text-align: left;
+}
+
+.validators-table td.address-col {
+	font-size: 12px;
+}
+
+.validators-table .rest-col {
+	width: 90px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.validators-table td.rest-col{
+	font-size: 19px;
+}
+
+.validators-table .comment-col {
+	text-align: left;
+}
+
+.validators-table .comment-col input {
+	width: 100%;
+}
+
+input.comment {
+	font-size: 12px;
+	padding: 3px 10px;
+}
+
+/*Buttons panel*/
+
+.buttons-panel {
+	padding: 35px 25px;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.buttons-panel .left-buttons {
+	float: left;
+}
+
+.buttons-panel .right-buttons {
+	float: right;
+}
+
+.buttons-panel .right-buttons .button {
+	margin: 0 10px 0 0;
+}
+
+.button {
+	width: 175px;
+	height: 42px;
+	background-color: #82AE33;
+	color: #ffffff;
+	border: 1px solid #628428;
+	cursor: pointer;
+	outline: none;
+}
+
+.button:hover {
+	background-color: #92BE43;
+}
+
+.button.button-white {
+	background-color: #E0E0E0;
+	color: #939393;
+	border: 1px solid #AFB0B0;
+}
+
+.button.button-white:hover {
+	background-color: #F0F0F0;
+}
+
+/*Previous requests table header*/
+
+.requests-table-header .refresh-icon {
+	width: 40px;
+}
+
+.requests-table-header {
+	margin-top: 15px;
+	line-height: 40px;
+	padding: 0px 25px;
+}
+.requests-table-header div {
+	color: #777777;
+}
+
+.requests-table-header .left-part {
+	float: left;
+}
+
+.requests-table-header .refresh-button-wrapper {
+	float: right;
+}
+
+.requests-table-header .refresh-button-wrapper > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+div.left-part {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.refresh-button-wrapper > div {
+	font-size: 13px;
+}
+
+.refresh-icon {
+	cursor: pointer;
+}
+
+/*Table requests*/
+
+.table-requests-wrapper {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 160px;
+	padding: 0 0;
+}
+
+.table-requests {
+	width: 100%;
+	color: #6C6C6C;
+	border-collapse: collapse;
+	border: 2px solid #F9F9F9;
+}
+
+.table-requests-header {
+	width: 100%;
+	background-color: #FDD621;
+}
+
+.table-requests th,
+.table-requests td {
+	border: 1px dotted white;
+	box-shadow: 0 0 1px rgba(0,0,0,0.2);
+	padding: 9px 8px;
+}
+.table-requests-header > tr {
+	font-size: 13px;
+	color: #6E5D0B;	
+}
+
+.table-requests > tbody > tr {
+	font-size: 12px;
+	color: #626263;
+}
+
+.table-requests .date-time-col {
+	padding-left: 25px;
+	width: 165px;
+	text-align: left;
+}
+
+.table-requests .number-col {
+	width: 135px;
+	text-align: left;
+}
+
+.table-requests .status-col {
+	width: 135px;
+	text-align: left;
+}
+
+.table-requests .reservation-system-col {
+	width: 190px;
+	text-align: left;
+}
+
+.table-requests .ordered-col {
+	text-align: left;
+}
+
+.table-requests .ordered-col .left-number {
+	float: left;
+}
+
+.table-requests .ordered-col > * {
+	float: right;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+tr.under-consideration {
+	background-color: #B1CFF5;
+}

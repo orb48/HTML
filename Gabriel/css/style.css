@@ -58,9 +58,13 @@ margin: 23px 0 0 0;
 
 /*Validators table*/
 
+input {
+	border: 1px solid #ccc;
+}
+
 .validators-table-wrapper {
 	overflow: auto;
-	max-height: 260px;
+	max-height: 235px;
 	padding: 0 18px;
 }
 

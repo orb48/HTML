@@ -1,6 +1,5 @@
-// JavaScript source code
-var string = "";
+ï»¿var string = "";
 for(var i = 1; i <= 10; ++i) {
-	string += "Ñòðîêà " + i + "\n";
+	string += "Ð¡Ñ‚Ñ€Ð¾ÐºÐ° " + i + "\n";
 }
 alert(string);

@@ -1,8 +1,5 @@
-﻿function compare(a, b) {
-	if (a > b) return 1;
-	if (a < b) return -1;
-}
-
-var list = [1, 4, 3, 7, 13, 2, 8];
-list.sort(compare);
+﻿var list = [1, 4, 3, 7, 7, 13, 2, 8];
+list.sort(function(a, b) { 
+	return a - b;
+});
 alert(list);

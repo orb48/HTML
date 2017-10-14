@@ -125,10 +125,20 @@ input {
 	width: 100%;
 }
 
+.validators-table .value-slider-col {
+	width: 50px;
+}
+input.value {
+	font-size: 12px;
+	padding: 3px 10px;
+	width:50px;
+}
+
 input.comment {
 	font-size: 12px;
 	padding: 3px 10px;
 }
+
 
 /*Buttons panel*/
 

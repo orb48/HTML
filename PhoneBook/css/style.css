@@ -18,8 +18,15 @@
 	padding: 5px;
 }
 
-.add-contact-form {
-	margin-top: 30px;
+.contacts-table td:first-child, 
+.contacts-table td:nth-child(2),
+.contacts-table td:last-child {
+	text-align: center;
+}
+
+.add-contact-form,
+.delete-all-checked {
+	margin: 20px 0 0 10px;
 }
 
 .add-contact-form span {

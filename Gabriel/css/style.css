@@ -128,7 +128,8 @@ input {
 .validators-table .value-slider-col {
 	width: 50px;
 }
-input.value {
+
+.value-slider-col input {
 	font-size: 12px;
 	padding: 3px 10px;
 	width:50px;

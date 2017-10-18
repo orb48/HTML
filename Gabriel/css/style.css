@@ -100,6 +100,7 @@ input {
 }
 
 .validators-table .address-col {
+	width: 470px;
 	text-align: left;
 }
 
@@ -132,7 +133,8 @@ input {
 .value-slider-col input {
 	font-size: 12px;
 	padding: 3px 10px;
-	width:50px;
+	width: 50px;
+	margin-left: 20px;
 }
 
 input.comment {
@@ -307,3 +309,13 @@ div.left-part {
 tr.under-consideration {
 	background-color: #B1CFF5;
 }
+
+#custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+ }
+

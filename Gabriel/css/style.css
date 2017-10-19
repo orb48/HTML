@@ -310,7 +310,7 @@ tr.under-consideration {
 	background-color: #B1CFF5;
 }
 
-#custom-handle {
+.slider .ui-slider-handle {
     width: 3em;
     height: 1.6em;
     top: 50%;
@@ -319,3 +319,11 @@ tr.under-consideration {
     line-height: 1.6em;
  }
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

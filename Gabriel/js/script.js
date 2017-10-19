@@ -1,9 +1,8 @@
 $(document).ready(function() {
 	var sliders = $("td.request-col .slider");
 	var inputs = $("td.value-slider-col .value");
-
 	sliders.each(function() {
-		var handle = $(this).closest("tr").find("#custom-handle");
+		var handle = $(this).closest("tr").find(".ui-slider-handle");
 		$(this).slider({
 			min: 0,
 			max: 1000,
@@ -36,22 +35,25 @@ $(document).ready(function() {
 		});
 
 		inputs.each(function(index) {
-		
-			$(this).keypress(function(e) {
-				if (e.which < 48 || e.which > 57) {
-					return false;
-				}
-			});
 			$(this).keyup(function(){
-				var handle = $(this).closest("tr").find(".slider").closest("tr").find("#custom-handle");
+				var handle = $(this).closest("tr").find(".slider").closest("tr").find(".ui-slider-handle");
+				var max = $(this).closest("tr").find(".slider").slider("option", "max");
 				var value = $(this).val();
-				if((value < 100 && value%10 === 0) || (value%100 === 0 && value >= 100 && value <= 1000)) {
+				if(value > max) {
+					value = max;
+				}
+				if(value%10 === 0){
 					handle.text(value);
 					$(this).val(value);
 					$(this).closest("tr").find(".slider").slider("value", value);
+				} else {
+					$(this).change(function() {
+						var roundedValue = $(this).val(Math.round($(this).val() / 10) * 10);
+						handle.text(roundedValue.val());
+						$(this).closest("tr").find(".slider").slider("value", roundedValue.val());
+					});
 				}
 			});
 		});
 	});
 });
-

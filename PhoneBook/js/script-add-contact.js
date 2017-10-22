@@ -16,20 +16,52 @@
 
 		//проверить данные
 
+		var phoneExist = false;
+		$("tr.body-table").each(function() {
+			var inputPhone = $(this).find("td:eq(4)").text();
+			if (phone === inputPhone) {
+				$.confirm({
+					boxWidth: "30%",
+					useBootstrap: false,
+					title: "",
+					content: "Контакт с таким номером уже существует",
+					type: "orange",
+					buttons: {
+						'Изменить номер': {
+							btnClass: "btn-orange",
+							action: function(){
+								$("input.phone").addClass("red-border"); 
+							}
+						},
+						'Закрыть': function () {
+						}
+					}
+				});
+				$("input.phone").addClass("red-border"); 
+				phoneExist = true;
+			} else {
+				$("input.phone").removeClass("red-border");
+			}
+		});
+		if (phoneExist) {
+			return;
+		}
+
 		var array = [lastName, firstName, phone];
 		var fieldEmpty = false;
 		$("form").find("input").each(function() {// проверяем каждое поле в форме
-			for(var i = 0; i < array.length; ++i){ // если поле присутствует в списке обязательных
-				if(!$(this).val()){ // если поле пустое
-					$(this).css("border", "red 1px solid");   
+			for (var i = 0; i < array.length; ++i){ // если поле присутствует в списке обязательных
+				if (!$(this).val()){ // если поле пустое
+					$(this).addClass("red-border"); 
 					$(this).attr("placeholder", "Введите данные");
 					fieldEmpty = true;
-                } else{
-					$(this).css("border", "1px solid #A9A9A9");// устанавливаем рамку обычного цвета
+                } else {
+					$(this).removeClass("red-border");
+					$(this).addClass("standard-border");
                 }            
             }
         });
-		if(fieldEmpty === true) {
+		if (fieldEmpty) {
 			return;
 		}
 
@@ -43,15 +75,18 @@
 		tr.find(".delete-button").click(function() {
 			var elem = $(this);
 			$.confirm({
-				title     : "Delete Contact",
-				buttons   : {
-					Yes   : {
+				boxWidth: "30%",
+				useBootstrap: false,
+				title: "Удалить выбранный контакт",
+				content: "Вы уверены, что вы хотите удалить выбранные контакты?",
+				buttons: {
+					'Да': {
 						action: function(){
 							$(elem).closest("tr").remove();
 							setRowsNumbers();
 						}
 					},
-					No    : {
+					'Нет': {
 						action: function(){}
 					}
 				}

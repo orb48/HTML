@@ -19,32 +19,18 @@
 		var phoneExist = false;
 		$("tr.body-table").each(function() {
 			var inputPhone = $(this).find("td:eq(4)").text();
-			if (phone === inputPhone) {
-				$.confirm({
-					boxWidth: "30%",
-					useBootstrap: false,
-					title: "",
-					content: "Контакт с таким номером уже существует",
-					type: "orange",
-					buttons: {
-						'Изменить номер': {
-							btnClass: "btn-orange",
-							action: function(){
-								$("input.phone").addClass("red-border"); 
-							}
-						},
-						'Закрыть': function () {
-						}
-					}
-				});
-				$("input.phone").addClass("red-border"); 
+			if (phone === inputPhone) {				
 				phoneExist = true;
-			} else {
-				$("input.phone").removeClass("red-border");
 			}
 		});
 		if (phoneExist) {
+			$("input.phone").addClass("red-border");
+			$("div.error").text("Контакт с таким номером уже существует");	
 			return;
+		} else {
+			$("input.phone").removeClass("red-border");
+			$(this).addClass("standard-border");
+			$("div.error").text("");
 		}
 
 		var array = [lastName, firstName, phone];

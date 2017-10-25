@@ -9,6 +9,11 @@
 	<link href="css/jquery-confirm.css" rel="stylesheet">
 </head>
 <body>
+	<div class = "filter">
+		<input type="text" class="find-in-table" />
+		<button class="apply-filter" type="button">Применить</button>
+		<button class="reset-filter" type="button">Очистить</button>
+	</div>
 	<table class="contacts-table">
 		<thead>
 			<tr>
@@ -16,7 +21,7 @@
 				<th>№</th>
 				<th>Фамилия</th>
 				<th>Имя</th>
-				<th>Номер телефона</th>
+				<th>Телефон</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -26,7 +31,7 @@
 	
 	<div><button class="delete-all-checked" type="button">Удалить выбранные контакты</button></div>
 
-	<form class="add-contact-form">
+	<form class="add-contact-form" action="">
 		<div>
 			<label><span>Фамилия </span><input type="text" class="last-name" name="lastname" /></label>
 		</div>
@@ -34,7 +39,7 @@
 			<label><span>Имя </span><input type="text" class="first-name" name="firstname" /></label>
 		</div>
 		<div>
-			<label><span>Номер телефона </span><input type="text" class="phone" name="phone" /></label>
+			<label><span>Номер телефона </span><input type="text" class="phone" name="phone" /><div class="error"></div></label>
 		</div>
 		<button class="add-contact-button" type="button">Добавить</button>
 	</form>
@@ -43,5 +48,6 @@
 	<script src="js/jquery-confirm.js" type="text/javascript"></script>
 	<script src="js/script-add-contact.js" type="text/javascript"></script>	
 	<script src="js/script-delete-contacts.js" type="text/javascript"></script>
+	<script src="js/filter.js" type="text/javascript"></script>
 </body>
 </html>

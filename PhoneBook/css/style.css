@@ -1,6 +1,10 @@
-﻿body {
+body {
 	font-family: sans-serif;
 	background: #F9F9F9;
+}
+
+div.filter {
+	margin: 10px 0 0 10px
 }
 
 .contacts-table {
@@ -28,6 +32,13 @@
 .add-contact-form,
 .delete-all-checked {
 	margin: 20px 0 0 10px;
+}
+
+div.error {
+	color: red;
+	font-size: 13px;
+	margin: 10px 0 0 140px;
+	font-style: italic;
 }
 
 .add-contact-form span {

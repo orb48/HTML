@@ -23,9 +23,14 @@
 				'Да': {
 					class: "red medium",
 					action: function(){
-						$("input:checked").closest("tr.body-table").remove();
+						$(".contacts-table").find("tbody").find("tr").each(function() {
+							if($(this).is(":visible") && $(this).find("input").is(':checked')) {
+								$(this).remove();
+							}
+							$(this).find("input").prop("checked", false);
+						});
 						$(".check-all").prop("checked", false);
-						setRowsNumbers()
+						setRowsNumbers();
 					}
 				},
 				'Нет': {

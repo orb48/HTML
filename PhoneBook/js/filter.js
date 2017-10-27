@@ -5,15 +5,16 @@ $(document).ready(function() {
 		$(".contacts-table").find("tbody").find("tr").each(function() {
 			var findRow = false;
 			var row = $(this);
+			var isIncluded = false;
+			isIncluded = $(this).text().toLowerCase().indexOf(inputValue);
 			row.find("td").each(function() {
-				if (inputValue === $(this).text().toLowerCase()) {
+				if (isIncluded != -1) {
 					findRow = true;
 				}
 			});
 			if (findRow) {
-				//row.css('display', '');
+				row.show();
 			} else {
-				//row.css('display', 'none');
 				row.hide();
 			}
 		});
